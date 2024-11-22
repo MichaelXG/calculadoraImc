@@ -1,4 +1,4 @@
-# Projeto Calendar
+# Projeto Calculadora de IMC
 
 Este é o repositório do projeto de uma calculadora de  IMC 
 (Índice de Massa Corporal), desenvolvido durante um module de JavaScript. O projeto consiste em uma aplicação interativa que ao informar o peso e altura, se adulto calculara o IMC se criança calcula o Z IMC e solicita a idade da criançs, usando as principais stacks front-end: HTML,CSS e JavaScript para criar um projeto visual incrível e de alta performance.
