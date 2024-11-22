@@ -1,0 +1,739 @@
+@charset "UTF-8";
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+* {
+    outline: 0;
+}
+
+body {
+    background: linear-gradient(45deg, #13495f, #764be2, #8373c6, #77d3b9);
+    background-attachment: fixed;
+    height: 100vh;
+    padding: 3rem 0;
+    margin: 0;
+    color: #555;
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+.mobile-wrapper {
+    background: #fff;
+    z-index: 1;
+    position: relative;
+    width: 380px;
+    min-height: 100%;
+    margin: auto;
+    padding: 10px 0 20px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px -10px #000;
+    overflow: hidden;
+}
+
+.header {
+    padding-bottom: 15px;
+    margin-bottom: 40px;
+}
+
+.header .container {
+    position: relative;
+}
+
+.header .container span {
+    color: #444;
+    font-family: "Ramabhadra";
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.header .container h1 {
+    margin-top: 5px;
+    color: #919294;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.header .container h2 {
+    margin-top: 5px;
+    color: #919294;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.header .container .menu-toggle {
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    padding: 24px;
+    border-radius: 50%;
+    direction: rtl;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 10px 30px -14px #000;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.header .container .menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: #777;
+    border-radius: 2px;
+    transition: all 300ms ease;
+}
+
+.header .container .menu-toggle span:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.header .container .menu-toggle span:first-child {
+    width: 20px;
+}
+
+.header .container .menu-toggle span:last-child {
+    width: 15px;
+}
+
+.header .container .menu-toggle:hover span:first-child,
+.header .container .menu-toggle:hover span:last-child {
+    width: 100%;
+}
+
+.header .container::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-left-color: #e8e8e8;
+    position: absolute;
+    bottom: -13px;
+    right: 0px;
+}
+
+.header .container::after {
+    content: "";
+    display: block;
+    width: calc(100% - 10px);
+    height: 2px;
+    background-color: #e8e8e8;
+    position: relative;
+    top: 8px;
+}
+
+.separate::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-left-color: #e8e8e8;
+    position: absolute;
+    bottom: -13px;
+    right: 0px;
+}
+
+.separate::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #e8e8e8;
+    position: relative;
+    top: 8px;
+    left: 0;
+}
+
+.header-info {
+    display: none;
+    margin-top: 15px;
+    color: #555;
+}
+
+.header-info h2 {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.header-info span {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.main-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    background: linear-gradient(to left, #485fed, rgba(255, 44, 118, 0.25)), #485fed;
+    color: #fff;
+    padding: 20px 23px;
+    position: relative;
+    box-shadow: 0px 0px 40px -9px #485fed;
+    margin-bottom: 50px;
+}
+
+.left-column,
+.right-column {
+    display: inline-flex;
+    /* Faz com que o tamanho da coluna se ajuste ao conteúdo */
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px;
+    /* Define a largura mínima */
+    max-width: 100%;
+    /* Garante que o contêiner não ultrapasse a largura disponível */
+}
+
+.main-box::before {
+    content: "";
+    background: linear-gradient(to left, #485fed, rgba(255, 44, 118, 0.25)),
+        #485fed;
+    opacity: 0.4;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    height: 40px;
+    margin: auto;
+    position: absolute;
+    bottom: -13px;
+    left: 50%;
+    transform: translatex(-50%);
+    border-radius: 50%;
+    box-shadow: 0px 0px 40px 0 #485fed;
+}
+
+.breadcrumb {
+    font-weight: 300;
+    position: relative;
+}
+
+.breadcrumb::after {
+    content: "";
+    font-family: "Ionicons";
+    vertical-align: middle;
+    font-size: 12px;
+    font-weight: 100;
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    left: 1px;
+    top: 3px;
+}
+
+.main-box .lb-text {
+    font-size: 14px;
+    margin: 7px 0 0 0;
+    letter-spacing: 1px;
+    font-weight: 600;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+}
+
+.radio-group label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.line-column {
+    grid-column: span 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.plus-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    box-shadow: 0px 10px 30px -14px #000;
+    cursor: pointer;
+    transition: all 350ms ease;
+    transition-timing-function: cubic-bezier(0.05, 1.8, 1, 1.57);
+}
+
+.plus-icon i {
+    font-size: 22px;
+    font-weight: 700;
+    background: #fff;
+    color: #777;
+    width: 45px;
+    height: 45px;
+    border: 6px solid #485fed;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plus-icon:hover {
+    transform: translateY(-10px);
+}
+
+.plus-icon:active {
+    transform: translateY(2px);
+    box-shadow: 0px 8px 30px -14px #000;
+}
+
+.result-imc .container h3 {
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.result-imc .container .primary-title::before {
+    content: "";
+    display: block;
+    width: 73%;
+    height: 2px;
+    background-color: #e8e8e8;
+    position: absolute;
+    top: 60%;
+    transform: translateY(-60%);
+    right: 0;
+}
+
+.result-imc .container .secondary-title::before {
+    content: "";
+    display: block;
+    width: 45%;
+    height: 2px;
+    background-color: #e8e8e8;
+    position: absolute;
+    top: 60%;
+    transform: translateY(-60%);
+    right: 0;
+}
+
+.result-imc .container h3::after {
+    content: "";
+    font-family: "Ionicons";
+    color: rgba(0, 0, 0, 0.1);
+    vertical-align: middle;
+    font-size: 36px;
+    font-weight: 100;
+    display: inline-block;
+    background: #fff;
+    color: #919294;
+    width: 38px;
+    text-align: center;
+    position: absolute;
+    right: 60px;
+    top: -10px;
+}
+
+.result-imc .container .imcs-wrapper {
+    margin-bottom: 30px;
+}
+
+.result-imc .container .imcs-wrapper .imc {
+    position: relative;
+    margin-bottom: 25px;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+.result-imc .container .imcs-wrapper .imc i {
+    font-size: 24px;
+    font-weight: 100;
+    position: absolute;
+    left: 0;
+    top: -4px;
+}
+
+.result-imc .container .imcs-wrapper .imc .imc__point {
+    margin: 0;
+    color: #555;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.result-imc .container .imcs-wrapper .imc .imc__entre {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    color: #999;
+    font-size: 16px;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.result-imc .container .imcs-wrapper .imc .imc__description {
+    margin-top: 10px;
+    color: #919294;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.result-imc .container .imcs-wrapper .imc.active {
+    background: #e8e8e8;
+    padding: 17px 0 5px 60px;
+    margin-bottom: 38px;
+    border-radius: 5px;
+}
+
+.result-imc .container .imcs-wrapper .imc.active::after {
+    content: "";
+    display: block;
+    width: 90%;
+    height: 10px;
+    background: #fff;
+    border: 2px solid #ddd;
+    border-top: 0;
+    border-radius: 0 0 5px 5px;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+.result-imc .container .imcs-wrapper .imc.active i {
+    position: absolute;
+    left: 25px;
+    top: 17px;
+}
+
+.result-imc .container .imcs-wrapper .imc.active .imc__description::before {
+    right: 45px;
+    font-size: 22px;
+    transition: all 550ms ease;
+    transition-timing-function: cubic-bezier(0.05, 1.8, 1, 1.57);
+}
+
+.result-imc .container .imcs-wrapper .imc.active:hover .imc__description::before {
+    transform: translate(15px, -12px);
+}
+
+.icon-in-active-mode {
+    color: #43ff28;
+    font-size: 20px !important;
+}
+
+.upcoming {
+    font-weight: bold;
+    color: #777;
+}
+
+.add-imc-button {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    border: 0;
+    padding: 0;
+    background: linear-gradient(to left, #485fed, rgba(255, 44, 118, 0.25)),
+        #485fed;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0px 0px 40px -9px #485fed;
+}
+
+.add-imc-button:active {
+    position: relative;
+    top: 2px;
+    left: 2px;
+}
+
+.add-imc-button .add-imc-button__title {
+    color: #fff;
+    padding: 0 18px 0 23px;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    font-family: "Lato";
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.add-imc-button .add-imc-button__icon {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0 17px 0 12px;
+    height: 100%;
+}
+
+.add-imc-button .add-imc-button__icon i {
+    margin: 0;
+    color: #fff;
+    font-size: 25px;
+    padding: 13px 0;
+}
+
+.titulo-imc {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+/* ------------ */
+
+form .input {
+    position: relative;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+/* ------- */
+
+/* Centering and basic structure */
+
+.input-group {
+    position: relative;
+    width: 100px;
+    margin-bottom: 40px;
+}
+
+.input-group label {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+input {
+    width: 100%;
+    padding: 10px 10px 10px 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    background: transparent;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+}
+
+input:focus {
+    border-bottom: 2px solid #fff;
+}
+
+.bar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50%;
+    height: 2px;
+    background-color: #ccc;
+    transition: all 0.3s ease;
+}
+
+input:focus+label,
+input:not(:placeholder-shown)+label {
+    top: -18px;
+    font-size: 14px;
+    color: #fff;
+}
+
+input:focus~.bar {
+    background-color: #fff;
+}
+
+/* Select */
+label.field {
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    padding: 10px;
+    opacity: 1;
+    /* Alterado de 0 para visível */
+    position: relative;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1;
+    /* border: none; */
+    /* border-bottom: 2px solid #ccc; */
+    outline: none;
+    background: transparent;
+    /* cursor: pointer; */
+}
+
+label.field span {
+    color: inherit;
+    display: block;
+    font-size: 16px;
+    height: 20px;
+    line-height: 20px;
+    left: 9px;
+    pointer-events: none;
+    position: absolute;
+    top: 32px;
+    transform: scale(1) translateY(0);
+    transition: color 0.3s ease, font-size 0.3s ease, top 0.3s ease;
+    z-index: 1;
+}
+
+label.field span.required::after {
+    content: "*";
+    color: inherit;
+    position: absolute;
+    left: -20px;
+    top: 0;
+}
+
+label.field .psuedo_select {
+    background: transparent;
+    position: relative;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 24px 0 0;
+    min-width: 240px;
+    padding-top: 24px;
+    outline: none;
+    z-index: 1;
+    transition: border-color 0.3s ease;
+}
+
+label.field .psuedo_select::after {
+    content: "";
+    background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ccc' viewBox='0 0 24 24' height='24' width='24'%3E%3Cpath d='M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z'/%3E%3Cpath d='M0-.75h24v24H0z' fill='none'/%3E%3C/svg%3E") no-repeat;
+    height: 24px;
+    width: 24px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: transform 0.3s ease;
+}
+
+label.field .psuedo_select .selected {
+    display: block;
+    height: 24px;
+    line-height: 24px;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+label.field .psuedo_select ul {
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.14);
+    display: block;
+    height: 0;
+    list-style: none;
+    margin-top: 2px;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+    pointer-events: none;
+    transition: height 0.3s ease, opacity 0.3s ease;
+    width: 100%;
+    z-index: 2;
+}
+
+label.field .psuedo_select ul li {
+    height: 32px;
+    padding: 8px 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+label.field .psuedo_select ul li:hover {
+    background: #f0f0f0;
+}
+
+label.field.focused {
+    color: #ccc;
+}
+
+label.field.focused .psuedo_select {
+    border-color: #ccc;
+}
+
+label.field.focused .psuedo_select ul {
+    height: auto;
+    max-height: 200px;
+    opacity: 1;
+    pointer-events: all;
+    overflow-y: auto;
+}
+
+label.field.focused .psuedo_select::after {
+    transform: rotate(180deg);
+}
+
+
+/* Inicialmente, o texto completo é escondido */
+.full-text {
+    display: none;
+    font-family: inherit !important;
+    /* Garantir que o texto completo use a fonte do body */
+    font-size: 14px !important;
+    font-weight: normal !important;
+    /* Remover negrito (caso esteja aplicado) */
+}
+
+/* Estilo do botão de expandir */
+.expand-button {
+    background: none;
+    border: none;
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+    font-family: inherit;
+    font-size: 10px !important; /* Diminui o tamanho da fonte */
+
+}
+
+/* Estilo do texto curto com os "..." */
+.short-text {
+    display: inline;
+    font-family: inherit !important;
+    /* Garantir que o texto curto use a fonte do body */
+    font-weight: normal !important;
+    /* Remover negrito caso tenha sido aplicado */
+}
+
+/* Quando o texto estiver expandido, exibe o texto completo e altera o botão */
+.expanded .full-text {
+    display: inline;
+    font-family: inherit !important;
+    /* Garantir que o texto completo use a fonte do body */
+    font-weight: normal !important;
+    /* Remover negrito */
+}
+
+.expanded .dots {
+    display: none;
+    font-weight: normal !important;
+    /* Remover negrito */
+}
+
+.expanded #expand-button {
+    display: none;
+}
